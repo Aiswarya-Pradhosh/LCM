@@ -1,52 +1,28 @@
-# Prerequisites
-*.d
+#include <stdio.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
 
-# Linker output
-*.ilk
-*.map
-*.exp
+/* Function declaration */
+int lcm(int a, int b);
 
-# Precompiled Headers
-*.gch
-*.pch
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+int main()
+{
+    int num1, num2, LCM;
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+    /* Input two numbers from user */
+    printf("Enter any two numbers to find lcm: ");
+    scanf("%d%d", &num1, &num2);
+    
+    /*
+     * Ensures that first parameter of LCM function 
+     * is always less than second 
+     */
+    if(num1 > num2)
+        LCM = lcm(num2, num1);
+    else
+        LCM = lcm(num1, num2);
+        
+    printf("LCM of %d and %d = %d", num1, num2, LCM);
+    
+    return 0;
+}
